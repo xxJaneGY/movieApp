@@ -1,6 +1,6 @@
 export const ROOT = {
   ROOT: '/',
-  MOVIE: 'movie',
+  MOVIE: '/',
   NOTFOUND: '/*',
 };
 

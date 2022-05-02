@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { getMoviesApi } from '../../api/url';
-import { MoviesInfo } from '../../interface/movie';
+import { MoviesList } from '../../interface/movie';
 import Loading from '../Common/Loading';
 
 function Movie() {
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState<MoviesInfo[]>([]);
+  const [data, setData] = useState<MoviesList>();
 
   const getMovies = async () => {
     try {
@@ -29,7 +29,7 @@ function Movie() {
         <>
         {data && (
           <div className='list-item'>
-            <h1 className='list-item title'>{data.title}</h1>
+            <h1 className='list-item title'>{data.data.movies[].title}</h1>
           </div>
         )}
         </>

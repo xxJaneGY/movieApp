@@ -1,5 +1,5 @@
 import { MovieDetailsList } from '../../interface/movieDetail';
-import { MoviesInfo } from '../../interface/movie';
+import { MoviesList } from '../../interface/movie';
 import axios, { AxiosResponse } from 'axios';
 import camelcaseKeys from 'camelcase-keys';
 
@@ -18,7 +18,7 @@ api.interceptors.response.use(
 );
 
 export const getMoviesApi = async () => {
-  const { data }: AxiosResponse<MoviesInfo[]> = await api.get(
+  const { data }: AxiosResponse<MoviesList> = await api.get(
     'list_movies.json?minimum_rating=9.0&sort_by=year'
   );
   return data;
