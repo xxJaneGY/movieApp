@@ -7,12 +7,13 @@ function Movie({ id, coverImg, title, year, runtime, genres }) {
     <div className={styles.movie}>
       <img src={coverImg} alt={title} className={styles.movie__img} />
       <div>
-        <h2 className={styles.movie__title}>
-          <Link to={`/movie/${id}`}>{title}</Link>
-        </h2>
+        <h2 className={styles.movie__title}>{title}</h2>
         <span className={styles.movie__year}>{year}</span>
         <span className={styles.movie__runtime}>
-          {parseInt(runtime / 60)}H {runtime % 60}M
+          {parseInt(runtime / 60)}
+          <span> H </span>
+          {runtime % 60}
+          <span> M </span>
         </span>
 
         <ul className={styles.movie__genres}>
@@ -24,6 +25,9 @@ function Movie({ id, coverImg, title, year, runtime, genres }) {
           </li>
         </ul>
       </div>
+      <button className={styles.button}>
+        <Link to={`/movieApp/${id}`}>VIEW DETAIL</Link>
+      </button>
     </div>
   );
 }

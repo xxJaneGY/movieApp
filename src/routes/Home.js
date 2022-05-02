@@ -25,17 +25,22 @@ function Home() {
         </div>
       ) : (
         <div className={styles.movies}>
-          {movies.map((movie) => (
-            <Movie
-              key={movie.id}
-              id={movie.id}
-              year={movie.year}
-              runtime={movie.runtime}
-              coverImg={movie.medium_cover_image}
-              title={movie.title}
-              genres={movie.genres}
-            />
-          ))}
+          {movies
+            .filter(
+              (movie) =>
+                movie.runtime !== 0 && movie.genres !== '' && movie.year > 1990
+            )
+            .map((movie) => (
+              <Movie
+                key={movie.id}
+                id={movie.id}
+                year={movie.year}
+                runtime={movie.runtime}
+                coverImg={movie.medium_cover_image}
+                title={movie.title}
+                genres={movie.genres}
+              />
+            ))}
         </div>
       )}
     </div>
