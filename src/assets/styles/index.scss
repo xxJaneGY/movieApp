@@ -1,0 +1,11 @@
+@use 'base/reset';
+@use 'base/basic';
+
+@use 'layout/header';
+@use 'layout/container';
+
+@use 'common/loading';
+@use 'common/notFound';
+
+@use 'pages/movie';
+@use 'pages/_movieDetail.scss/';
