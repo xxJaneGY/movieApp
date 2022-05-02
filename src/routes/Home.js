@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import Movie from "../components/Movie";
-import styles from "./Home.module.css";
+import { useEffect, useState } from 'react';
+import Movie from '../components/Movie';
+import styles from './Home.module.css';
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -30,9 +30,9 @@ function Home() {
               key={movie.id}
               id={movie.id}
               year={movie.year}
+              runtime={movie.runtime}
               coverImg={movie.medium_cover_image}
               title={movie.title}
-              summary={movie.summary}
               genres={movie.genres}
             />
           ))}
